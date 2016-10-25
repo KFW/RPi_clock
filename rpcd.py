@@ -7,7 +7,7 @@ boone = dt.date(2017,8,5)
 
 def tick(time1=''):
     # get the current local time from the PC
-    time2 = time.strftime('%H:%M:%S')
+    time2 = time.strftime('%H:%M')
     # if time string has changed, update it
     if time2 != time1:
         time1 = time2
