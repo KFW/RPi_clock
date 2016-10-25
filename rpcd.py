@@ -3,6 +3,7 @@ import tkinter as tk
 import datetime as dt
 
 bjcmg = dt.date(2017,6,1)
+boone = dt.date(2017,8,5)
 
 def tick(time1=''):
     # get the current local time from the PC
@@ -15,10 +16,14 @@ def tick(time1=''):
         calendar.grid(row=0, column=0, sticky=tk.W)
         clock.config(text=time2)
         clock.grid(row=0, column=1, sticky=tk.E)
-        countdown = bjcmg - today
-        cd = str(countdown.days)
-        count.config(text= cd + ' days!')
-        count.grid(row=2,columnspan=2)
+        countdown1 = bjcmg - today
+        countdown2 = boone - today
+        cd1 = str(countdown1.days)
+        cd2 = str(countdown2.days)
+        count1.config(text= cd1 + ' days!')
+        count1.grid(row=2,columnspan=2)
+        count2.config(text= cd2 + ' days!')
+        count2.grid(row=4,columnspan=2)        
     # calls itself every 200 milliseconds
     # to update the time display as needed
     clock.after(200, tick)
@@ -27,10 +32,13 @@ root.configure(background='#7ea0d6')
 root.geometry('790x470+5+5')
 root.title = 'HIP Countdown Clock'
 tk.Label(root, text='BJCMG goes live in:', font=('helvetica', 48, 
-            'bold'), bg='#7ea0d6').grid(row=1, columnspan=2, sticky=tk.W)
+            'bold'), bg='#7ea0d6').grid(row=1, columnspan=2)
+tk.Label(root, text='Boone goes live in:', font=('helvetica', 48, 
+            'bold'), bg='#7ea0d6').grid(row=3, columnspan=2)
 calendar = tk.Label(root, font=('helvetica', 36), bg='#7ea0d6')
 clock = tk.Label(root, font=('helvetica', 48, 'bold'), bg='#7ea0d6')
-count = tk.Label(root, font=('helvetica', 48, 'bold'), bg='#7ea0d6')
+count1 = tk.Label(root, font=('helvetica', 48, 'bold'), bg='#7ea0d6')
+count2 = tk.Label(root, font=('helvetica', 48, 'bold'), bg='#7ea0d6')
 
 # clock.pack(fill='both', expand=1)
 tick()
