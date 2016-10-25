@@ -30,7 +30,7 @@ def tick(time1=''):
 root = tk.Tk()
 root.configure(background='#7ea0d6')
 root.geometry('790x470+5+5')
-root.title = 'HIP Countdown Clock'
+root.title('HIP Countdown Clock')
 tk.Label(root, text='BJCMG goes live in:', font=('helvetica', 48, 
             'bold'), bg='#7ea0d6').grid(row=1, columnspan=2)
 tk.Label(root, text='Boone goes live in:', font=('helvetica', 48, 
