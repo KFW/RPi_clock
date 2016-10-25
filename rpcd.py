@@ -36,7 +36,7 @@ tk.Label(root, text='BJCMG goes live in:', font=('helvetica', 36,
 tk.Label(root, text='Boone goes live in:', font=('helvetica', 36, 
             'bold'), bg='#7ea0d6').grid(row=3, columnspan=2)
 calendar = tk.Label(root, font=('helvetica', 24), bg='#7ea0d6')
-clock = tk.Label(root, font=('helvetica', 56, 'bold'), bg='#7ea0d6', fg='blue4')
+clock = tk.Label(root, font=('helvetica', 72, 'bold'), bg='#7ea0d6', fg='blue4')
 count1 = tk.Label(root, font=('helvetica', 42, 'bold'), bg='#7ea0d6')
 count2 = tk.Label(root, font=('helvetica', 42, 'bold'), bg='#7ea0d6')
 
