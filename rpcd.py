@@ -3,7 +3,7 @@ import tkinter as tk
 import datetime as dt
 
 window_size = '800x480'
-go_lives = [('BJCMG', dt.date(2017,6,1)),
+go_lives = [('BJCMG', dt.date(2017,6,3)),
             ('Boone', dt.date(2017,8,5)),
             ('Pod 1', dt.date(2017,12,2)), 
             ('Pod 2', dt.date(2018,2,3)),
