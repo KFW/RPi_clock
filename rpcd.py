@@ -36,7 +36,7 @@ def tick(time1=''):
         cd2 = str(countdown2.days)
         hosp1.config(text= h1 + ' goes live in:')
         hosp1.grid(row=1, columnspan=2)
-        if cd1==1:
+        if cd1=="1":
             count1.config(text= cd1 + ' day')
         else:
             count1.config(text=cd1 + ' days')
