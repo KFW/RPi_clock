@@ -8,8 +8,10 @@ go_lives = [#('BJCMG', dt.date(2017,6,3)),
             #('Pod 1', dt.date(2017,12,2)), 
             ('Pod 2', dt.date(2018,2,3)),
             ('Academic', dt.date(2018,6,2)),
-            ('Memorial (?)', dt.date(2019,4,1)),
-            ('???', dt.date(2020,4,1))                     
+            ('Memorial Med Grp (maybe)', dt.date(2019,4,1)),
+            ('Memorial (maybe)', dt.date(2019,4,1)),
+            ('???', dt.date(2021,4,1))
+            ('????', dt.date(2025,4,1))                     
            ]
 
 def tick(time1=''):
