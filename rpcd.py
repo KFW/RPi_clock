@@ -45,7 +45,7 @@ root.columnconfigure(1, weight=1)
 root.title('KFW Clock')
 cal_day = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 cal_date = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
-clock = tk.Label(root, font=('helvetica', 256, 'bold'), bg='#7ea0d6', fg='blue4')
+clock = tk.Label(root, font=('helvetica', 128, 'bold'), bg='#7ea0d6', fg='blue4')
 cd_line = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
 
 
