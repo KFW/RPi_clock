@@ -4,7 +4,7 @@ import datetime as dt
 
 window_size = '800x480'
 go_lives = [('Academic', dt.date(2018,6,2)),
-            ('Memorial Med Group', dt.date(2050,2,2)),     # date > 1000 days in future for now so ??? displayed
+            ('Mem Med Grp', dt.date(2050,2,2)),     # date > 1000 days in future for now so ??? displayed
             ('Memorial', dt.date(2050,8,1)),
            ]
 
