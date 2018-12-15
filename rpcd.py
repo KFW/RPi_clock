@@ -3,8 +3,8 @@ import tkinter as tk
 import datetime as dt
 
 window_size = '800x480'
-go_lives = [('Academic', dt.date(2018,6,2)),
-            ('ECW Convrsn', dt.date(2019,3,31)),    
+go_lives = [('2018 Upgrade', dt.date(2019,3,2)),
+            ('ECW Convrsn', dt.date(2019,3,30)),    
             ('Memorial', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
            ]
 
