@@ -41,14 +41,15 @@ def tick(time1=''):
                 else:
                     site2string = "----------"
                 break
-        cd_line.grid(row=2, columnspan=2)
-        cd_line.config(text = site1string)
-        cd_line.grid(row=3, columnspan=2)
-        cd_line.config(text = site2string)
+        cd_line1.grid(row=2, columnspan=2)
+        cd_line1.config(text = site1string)
+        cd_line2.grid(row=3, columnspan=2)
+        cd_line2.config(text = site2string)
 
     # calls itself every 200 milliseconds
     # to update the time display as needed
     clock.after(200, tick)
+
 root = tk.Tk()
 root.configure(background='#7ea0d6')
 root.geometry(window_size)
@@ -57,8 +58,8 @@ root.title('KFW Clock')
 cal_day = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 cal_date = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 clock = tk.Label(root, font=('helvetica', 128, 'bold'), bg='#7ea0d6', fg='blue4')
-cd_line = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
-
+cd_line1 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
+cd_line2 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
 
 # clock.pack(fill='both', expand=1)
 tick()
