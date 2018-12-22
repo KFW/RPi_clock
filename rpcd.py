@@ -8,6 +8,13 @@ go_lives = [('2018 Upgrade', dt.date(2019,3,2)),
             ('Memorial', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
            ]
 
+def msg_string(pod, countdown):
+    if countdown.days == 1:
+        return pod + ' goes live in: 1 day'
+    elif countdown.days > 1000:
+        return pod + ' goes live in: ??? days'
+    else:
+        return pod + ' goes live in: ' + str(countdown.days) + ' days'
 
 def tick(time1=''):
     # get the current local time from the PC
@@ -22,18 +29,22 @@ def tick(time1=''):
         cal_date.grid(row=0, column=1, sticky=tk.E)
         clock.config(text=time2)
         clock.grid(row=1, columnspan=2)
-        for index, site in enumerate(go_lives): // prob wrong approach - use len(go_lives)
+        for index, site in enumerate(go_lives):
             if site[1] > today:
                 countdown = site[1] - today
                 pod = site[0]
+                site1string = msg_string(pod, countdown)
+                if (index + 1) < len(go_lives): # there are additional sites
+                    countdown = go_lives[index + 1][1] - today
+                    pod = go_lives[index + 1][0]
+                    site2string = msg_string(pod, countdown)
+                else:
+                    site2string = "----------"
                 break
         cd_line.grid(row=2, columnspan=2)
-        if countdown.days == 1:
-            cd_line.config(text=  pod + ' goes live in: 1 day')
-        elif countdown.days > 1000:
-            cd_line.config(text= pod + ' goes live in: ??? days')
-        else:
-            cd_line.config(text= pod + ' goes live in: ' + str(countdown.days) + ' days')
+        cd_line.config(text = site1string)
+        cd_line.grid(row=3, columnspan=2)
+        cd_line.config(text = site2string)
 
     # calls itself every 200 milliseconds
     # to update the time display as needed
