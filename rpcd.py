@@ -22,7 +22,7 @@ def tick(time1=''):
         cal_date.grid(row=0, column=1, sticky=tk.E)
         clock.config(text=time2)
         clock.grid(row=1, columnspan=2)
-        for site in go_lives:
+        for index, site in enumerate(go_lives): // prob wrong approach - use len(go_lives)
             if site[1] > today:
                 countdown = site[1] - today
                 pod = site[0]
