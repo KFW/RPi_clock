@@ -3,18 +3,18 @@ import tkinter as tk
 import datetime as dt
 
 window_size = '800x480'
-go_lives = [('2018 Upgrade', dt.date(2019,3,2)),
-            ('ECW Convrsn', dt.date(2019,3,30)),    
-            ('Memorial', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
+go_lives = [('ECW Convrsn', dt.date(2019,3,30)),
+            ('Fall Upgrade ?', dt.date(2019,10,6)),
+            ('HB Pilot', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
            ]
 
 def msg_string(pod, countdown):
     if countdown.days == 1:
-        return pod + ' goes live in: 1 day'
+        return pod + ' live in: 1 day'
     elif countdown.days > 1000:
-        return pod + ' goes live in: ??? days'
+        return pod + ' live in: ??? days'
     else:
-        return pod + ' goes live in: ' + str(countdown.days) + ' days'
+        return pod + ' live in: ' + str(countdown.days) + ' days'
 
 def tick(time1=''):
     # get the current local time from the PC
