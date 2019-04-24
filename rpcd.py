@@ -4,7 +4,7 @@ import datetime as dt
 
 window_size = '800x480'
 go_lives = [('ECW Convrsn', dt.date(2019,3,30)),
-            ('Fall Ftr Rel ', dt.date(2019,10,13)),
+            ('Fall Feature Rls', dt.date(2019,10,13)),
             ('HB Pilot', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
            ]
 
