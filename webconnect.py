@@ -15,7 +15,7 @@ from time import sleep
 # *** NOTE: will need to fix MAC address in URL on each machine *** #
 #####################################################################
 
-LOGIN_URL = 'http://1.1.1.1/fs/customwebauth/login.html?aswitch_url=http://1.1.1.1/login.html&client_mac=a8:66:7f:2f:02:37&wlan=Guest&redirect=google.com/'  # noqa
+AUTHENTICATE_URL = 'http://1.1.1.1/fs/customwebauth/login.html?aswitch_url=http://1.1.1.1/login.html&client_mac=b8:27:eb:0a:9a:80&wlan=Guest&redirect=https://www.google.com/'  # noqa
 GOOGLE = 'http://google.com'
 
 def internet_on():
@@ -28,7 +28,7 @@ def main():
     if not internet_on():
         print('not connected')
         with Browser('chrome') as browser:
-            browser.visit(LOGIN_URL)
+            browser.visit(AUTHENTICATE_URL)
             sleep(3)
             if browser.is_text_present('Agreement', wait_time=7):
                 print('clicking')
