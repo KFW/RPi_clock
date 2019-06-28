@@ -17,9 +17,10 @@ from time import sleep
 
 AUTHENTICATE_URL = 'http://1.1.1.1/fs/customwebauth/login.html?aswitch_url=http://1.1.1.1/login.html&client_mac=b8:27:eb:0a:9a:80&wlan=Guest&redirect=https://www.google.com/'  # noqa
 GOOGLE = 'http://google.com'
+DRIVER_PATH = {'executable_path':'/usr/lib/chromium-browser/chromedriver'}
 
 def internet_on():
-    with Browser('chrome') as browser:
+    with Browser('chrome', **DRIVER_PATH) as browser:
         browser.visit(GOOGLE)
         sleep(3)
         return (browser.title == 'Google')
@@ -27,7 +28,7 @@ def internet_on():
 def main():
     if not internet_on():
         print('not connected')
-        with Browser('chrome') as browser:
+        with Browser('chrome', **DRIVER_PATH) as browser:
             browser.visit(AUTHENTICATE_URL)
             sleep(3)
             if browser.is_text_present('Agreement', wait_time=7):
