@@ -3,7 +3,7 @@ import tkinter as tk
 import datetime as dt
 
 window_size = '800x480'
-go_lives = [('Apollo 11', dt.date(2019,7, 20),
+go_lives = [('Apollo 11', dt.date(2019,7, 20)),
             ('Fall Feature Rls', dt.date(2019,10,13)),
             ('HB Pilot', dt.date(2050,8,1)),     # date > 1000 days in future for now so ??? displayed
            ]
