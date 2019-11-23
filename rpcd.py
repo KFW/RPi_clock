@@ -13,13 +13,13 @@ events = [('Thanksgiving', dt.date(2019,11,28)),
             ('Dad - BD', dt.date(2020,3,14))
            ]
 
-def msg_string(event, countdown):
+def msg_string(event_name, countdown):
     if countdown.days == 1:
-        return event + ' is in: 1 day'
+        return event_name + ' is in: 1 day'
     elif countdown.days > 1000:
-        return event + ' is in: ??? days'
+        return event_name + ' is in: ??? days'
     else:
-        return event + ' is in: ' + str(countdown.days) + ' days'
+        return event_name + ' is in: ' + str(countdown.days) + ' days'
 
 def tick(time1=''):
     # get the current local time from the PC
@@ -34,22 +34,22 @@ def tick(time1=''):
         cal_date.grid(row=0, column=1, sticky=tk.E)
         clock.config(text=time2)
         clock.grid(row=1, columnspan=2)
-        for index, site in enumerate(events):
-            if site[1] > today:
-                countdown = site[1] - today
-                pod = site[0]
-                site1string = msg_string(event, countdown)
+        for index, event in enumerate(events):
+            if event[1] > today:
+                countdown = event[1] - today
+                event_name = event[0]
+                event1string = msg_string(event_name, countdown)
                 if (index + 1) < len(events): # there are additional sites
                     countdown = events[index + 1][1] - today
-                    event = events[index + 1][0]
-                    site2string = msg_string(event, countdown)
+                    event_name = events[index + 1][0]
+                    event2string = msg_string(event_name, countdown)
                 else:
-                    site2string = "----------"
+                    event2string = "----------"
                 break
         cd_line1.grid(row=2, columnspan=2)
-        cd_line1.config(text = site1string)
+        cd_line1.config(text = event1string)
         cd_line2.grid(row=3, columnspan=2)
-        cd_line2.config(text = site2string)
+        cd_line2.config(text = event2string)
 
     # calls itself every 200 milliseconds
     # to update the time display as needed
