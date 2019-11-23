@@ -6,11 +6,11 @@ window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
 events = [('Thanksgiving', dt.date(2019,11,28)),
             ('Christmas', dt.date(2019,12,25)),
-            ('New Years', dt.date(2020,01,01)),
-            ('MLK', dt.date(2020,01,20)),
-            ('Holland', dt.date(2020,02,01)),
-            ('G - BD', dt.date(2020,02,28)),
-            ('Dad - BD', dt.date(2020,03,14))
+            ('New Years', dt.date(2020,1,1)),
+            ('MLK', dt.date(2020,1,20)),
+            ('Holland', dt.date(2020,2,1)),
+            ('G - BD', dt.date(2020,2,28)),
+            ('Dad - BD', dt.date(2020,3,14))
            ]
 
 def msg_string(event, countdown):
