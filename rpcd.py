@@ -4,13 +4,16 @@ import datetime as dt
 
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
-events = [('Thanksgiving', dt.date(2019,11,28)),
-            ('Christmas', dt.date(2019,12,25)),
-            ('New Years', dt.date(2020,1,1)),
-            ('MLK', dt.date(2020,1,20)),
-            ('Holland', dt.date(2020,2,1)),
-            ('G - BD', dt.date(2020,2,28)),
-            ('Dad - BD', dt.date(2020,3,14))
+events = [  ('Dad - BD', dt.date(2020,3,14)),
+            ('Ann - BD', dt.date(2020,3,29)),
+            ('I2 Sympsm', dt.date(2020,4,10)),
+            ('HI Team Bldg', dt.date(2020,4,24)),
+            ('XGM', dt.date(2020,5,4)),
+            ('AMIA CI', dt.date(2020,5,19)),
+            ('ID Attdg', dt.date(2020,5,25)),
+            ('UGM', dt.date(2020,8,24)),
+            ('Deutschland', dt.date(2020,9,12)),
+            ('Maker Camp', dt.date(2020,10,9))
            ]
 
 def msg_string(event_name, countdown):
