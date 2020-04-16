@@ -4,10 +4,7 @@ import datetime as dt
 
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
-events = [  ('Dad - BD', dt.date(2020,3,14)),
-            ('Ann - BD', dt.date(2020,3,29)),
-            ('I2 Sympsm', dt.date(2020,4,10)),
-            ('HI Team Bldg', dt.date(2020,4,24)),
+events = [  ('HI Team Bldg', dt.date(2020,4,24)),
             ('XGM', dt.date(2020,5,4)),
             ('AMIA CI', dt.date(2020,5,19)),
             ('ID Attdg', dt.date(2020,5,25)),
