@@ -4,13 +4,14 @@ import datetime as dt
 
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
-events = [  ('HI Team Bldg', dt.date(2020,4,24)),
-            ('XGM', dt.date(2020,5,4)),
-            ('AMIA CI', dt.date(2020,5,19)),
-            ('ID Attdg', dt.date(2020,5,25)),
-            ('UGM', dt.date(2020,8,24)),
-            ('Deutschland', dt.date(2020,9,12)),
-            ('Maker Camp', dt.date(2020,10,9))
+events = [  ('ID Attdg', dt.date(2022,3,24)),
+            ('HFM Go Live', dt.date(2022,4,2)),
+            ('XGM', dt.date(2022,5,2)),
+            ('AMIA CI', dt.date(2022,5,24)),
+            ('ID Attdg', dt.date(2022,6,9)),
+            ('UGM', dt.date(2022,8,22)),
+            ('Oktoberfest', dt.date(2022,9,17)),
+            ('Maker Camp', dt.date(2022,10,7))
            ]
 
 def msg_string(event_name, countdown):
@@ -39,7 +40,7 @@ def tick(time1=''):
                 countdown = event[1] - today
                 event_name = event[0]
                 event1string = msg_string(event_name, countdown)
-                if (index + 1) < len(events): # there are additional sites
+                if (index + 1) < len(events): # there are additional events
                     countdown = events[index + 1][1] - today
                     event_name = events[index + 1][0]
                     event2string = msg_string(event_name, countdown)
@@ -64,7 +65,7 @@ cal_day = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 cal_date = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 clock = tk.Label(root, font=('helvetica', 128, 'bold'), bg='#7ea0d6', fg='blue4')
 cd_line1 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
-cd_line2 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
+cd_line2 = tk.Label(root, font=('helvetica', 24), bg='#7ea0d6')
 
 # clock.pack(fill='both', expand=1)
 tick()
