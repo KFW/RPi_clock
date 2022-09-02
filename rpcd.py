@@ -4,13 +4,7 @@ import datetime as dt
 
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
-events = [  ('ID Attdg', dt.date(2022,3,24)),
-            ('HFM Go Live', dt.date(2022,4,2)),
-            ('XGM', dt.date(2022,5,2)),
-            ('AMIA CI', dt.date(2022,5,24)),
-            ('ID Attdg', dt.date(2022,6,9)),
-            ('UGM', dt.date(2022,8,22)),
-            ('Oktoberfest', dt.date(2022,9,17)),
+events = [  ('Oktoberfest', dt.date(2022,9,21)),
             ('Maker Camp', dt.date(2022,10,7))
            ]
 
