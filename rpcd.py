@@ -4,8 +4,9 @@ import datetime as dt
 
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
-events = [  ('Oktoberfest', dt.date(2022,9,21)),
-            ('Maker Camp', dt.date(2022,10,7))
+events = [  ('Christmas', dt.date(2022,12,25)),
+            ('Leather Workshop', dt.date(2023,2,3)),
+            ('ABPM CI Board Mtg', dt.date(2023,2,28))
            ]
 
 def msg_string(event_name, countdown):
