@@ -5,7 +5,7 @@ import datetime as dt
 window_size = '800x480'
 # future enhancement - put dates in separate file so don't have to keep changing code
 events = [  ('Christmas', dt.date(2022,12,25)),
-            ('Leather Workshop', dt.date(2023,2,3)),
+            ('Enhancement Deadline', dt.date(2023,1,6)),
             ('ABPM CI Board Mtg', dt.date(2023,2,28))
            ]
 
