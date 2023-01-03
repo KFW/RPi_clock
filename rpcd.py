@@ -2,12 +2,11 @@ import time
 import tkinter as tk
 import datetime as dt
 
+events = []
+
 window_size = '800x480'
-# future enhancement - put dates in separate file so don't have to keep changing code
-events = [  ('Christmas', dt.date(2022,12,25)),
-            ('Leather Workshop', dt.date(2023,2,3)),
-            ('ABPM CI Board Mtg', dt.date(2023,2,28))
-           ]
+
+# Change so that events.txt is read once a day, and event strings are only changed once a day
 
 def msg_string(event_name, countdown):
     if countdown.days == 1:
@@ -16,8 +15,22 @@ def msg_string(event_name, countdown):
         return event_name + ' is in: ??? days'
     else:
         return event_name + ' is in: ' + str(countdown.days) + ' days'
+        
+def get_events():
+    global events
+    with open('events.txt') as f:   # 'events.txt must be in same directory as program file
+        for line in f:
+            l = line.strip().split(",")
+            event = (l[0], dt.date(int(l[1]),int(l[2]), int(l[3])))
+            events.append(event)
 
 def tick(time1=''):
+    global today
+    # check date - if new date then reload events file
+    if today != dt.date.today():
+        today = dt.date.today()
+        get_events()
+
     # get the current local time from the PC
     time2 = time.strftime('%H:%M')
     # if time string has changed, update it
@@ -62,6 +75,12 @@ clock = tk.Label(root, font=('helvetica', 128, 'bold'), bg='#7ea0d6', fg='blue4'
 cd_line1 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
 cd_line2 = tk.Label(root, font=('helvetica', 24), bg='#7ea0d6')
 
-# clock.pack(fill='both', expand=1)
+
+# initialize
+today = dt.date.today()
+get_events()
+
+# Not actually sure at this point why it keeps looping like it does
+# I don't recall where I saw the example code
 tick()
 root.mainloop()
