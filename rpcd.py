@@ -15,7 +15,7 @@ def msg_string(event_name, countdown):
         return event_name + ' is in: ??? days'
     else:
         return event_name + ' is in: ' + str(countdown.days) + ' days'
-        
+
 def get_events():
     global events
     with open('events.txt') as f:   # 'events.txt must be in same directory as program file
@@ -26,6 +26,8 @@ def get_events():
 
 def tick(time1=''):
     global today
+    global events
+    
     # check date - if new date then reload events file
     if today != dt.date.today():
         today = dt.date.today()
