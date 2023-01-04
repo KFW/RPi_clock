@@ -10,8 +10,6 @@ event2string = "-"
 
 window_size = '800x480'
 
-# Change so that events.txt is read once a day, and event strings are only changed once a day
-
 def msg_string(event_name, countdown):
     if countdown.days == 1:
         return event_name + ' is in: 1 day'

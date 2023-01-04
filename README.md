@@ -1,1 +1,1 @@
-TKinter program for Raspberry Pi et al to countdown days to specific events. Originally written for BJC HIP Epic launch
+TKinter program for Raspberry Pi et al to countdown days to specific events. Originally written for BJC/WUSM Epic launch to count down to go-live events. At this point I don't recall where I got the details of how to structure the program to work.
