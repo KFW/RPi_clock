@@ -37,6 +37,7 @@ def get_event_strings():
             break
     return (event1string, event2string)
 
+# update events list; handle errors if file not present by countdown to upcoming years
 def get_events():
     global events 
     
