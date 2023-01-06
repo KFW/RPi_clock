@@ -11,7 +11,9 @@ event2string = "-"
 window_size = '800x480'
 
 def msg_string(event_name, countdown):
-    if countdown.days == 1:
+    if countdown.days == 0:
+        return event_name + 'is today!'
+    elif countdown.days == 1:
         return event_name + ' is in: 1 day'
     elif countdown.days > 1000:
         return event_name + ' is in: ??? days'
@@ -26,7 +28,7 @@ def get_event_strings():
     event1string = " "
     event2string = "-----------"
     for index, event in enumerate(events):
-        if event[1] > today:
+        if event[1] >= today:
             countdown = event[1] - today
             event_name = event[0]
             event1string = msg_string(event_name, countdown)
