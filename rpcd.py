@@ -2,12 +2,6 @@ import time
 import tkinter as tk
 import datetime as dt
 
-# OK it may be lazy, and sloppy, but using globals in a program 
-# this short just makes life easier
-# events = []
-# event1string = "-"
-# event2string = "-"
-# initialize = True
 today = 0
 
 window_size = '800x480'
@@ -23,9 +17,6 @@ def msg_string(event_name, countdown):
         return event_name + ' is in: ' + str(countdown.days) + ' days'
 
 def get_event_strings(events, today):
-    # global events
-    # global event1string
-    # global event2string
  
     event1string = "x"
     event2string = "xx"
@@ -43,7 +34,7 @@ def get_event_strings(events, today):
 
 # update events list; handle errors if file not present by countdown to upcoming years
 def get_events():
-    # global events 
+
     events = []
     try:
         with open('events.txt') as f:   # 'events.txt must be in same directory as program file
@@ -65,18 +56,6 @@ def get_events():
 
 def tick():
     global today
-    # global events
-    # global initialize
-
-    # if initialize:
-    #     initialize = False
-    #     today = dt.date.today()
-    #     events = get_events()
-    #     event1string, event2string = get_event_strings(events, today)
-    # check date - if new date then reload events file
-
-    # event1string = " "
-    # event2string = "-----------"
     
     if today != dt.date.today():
         today = dt.date.today()
@@ -92,22 +71,9 @@ def tick():
     cal_date.grid(row=0, column=1, sticky=tk.E)
     clock.config(text=time_now)
     clock.grid(row=1, columnspan=2)
-    # for index, event in enumerate(events):
-    #     if event[1] > today:
-    #         countdown = event[1] - today
-    #         event_name = event[0]
-    #         event1string = msg_string(event_name, countdown)
-    #         if (index + 1) < len(events): # there are additional events
-    #             countdown = events[index + 1][1] - today
-    #             event_name = events[index + 1][0]
-    #             event2string = msg_string(event_name, countdown)
-    #         else:
-    #             event2string = "----------"
-    #         break
+
     cd_line1.grid(row=2, columnspan=2)
-    print(event1string)
     cd_line1.config(text = event1string)
-    print(event2string)
     cd_line2.grid(row=3, columnspan=2)
     cd_line2.config(text = event2string)
 
@@ -125,12 +91,6 @@ cal_date = tk.Label(root, font=('helvetica', 48), bg='#7ea0d6')
 clock = tk.Label(root, font=('helvetica', 128, 'bold'), bg='#7ea0d6', fg='blue4')
 cd_line1 = tk.Label(root, font=('helvetica', 32), bg='#7ea0d6')
 cd_line2 = tk.Label(root, font=('helvetica', 24), bg='#7ea0d6')
-
-
-# initialize
-# today = dt.date.today()
-# get_events()
-# get_event_strings()
 
 # Not actually sure at this point why it keeps looping like it does
 # I don't recall where I saw the example code
